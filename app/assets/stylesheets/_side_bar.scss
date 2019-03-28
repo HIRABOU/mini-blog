@@ -1,0 +1,55 @@
+.chat-side {
+  width: 300px;
+  float: left;
+  border-right: solid 2px;
+
+
+  .side-header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 20px;
+    border-bottom: solid 2px;
+
+
+    &__box {
+
+      &__name {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+
+    &__icons {
+
+      .list {
+
+        .fa {
+          font-size: 3rem;
+        }
+      }
+    }
+  }
+}
+
+.groups {
+  height: calc(100vh - 100px);
+  padding-left: 30px;
+
+  &__title {
+    font-size: 20px;
+    margin-top: 25px;
+    padding-bottom: 10px;
+  }
+
+  &__content {
+      font-size: 15px;
+
+    &__title {
+        font-size: 18px;
+        padding-top: 15px;
+      }
+
+  }
+}

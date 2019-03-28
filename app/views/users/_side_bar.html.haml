@@ -1,0 +1,20 @@
+.chat-side
+  .side-header
+    .side-header__box
+      %h1.side-header__box__name
+        = current_user.name
+        %b のマイページ
+    %ul.side-header__icons
+      %li.list
+        = link_to edit_user_registration_path do
+          %i.fa.fa-pencil-square-o
+  .groups
+    .groups__title
+      = current_user.name
+      %b の投稿記事一覧
+    .groups__content
+    - current_user.tweets.each do |tweet|
+      .groups__content__title
+        =link_to "/tweets/#{tweet.id}" do
+          .groups__content__title__main
+          = tweet.title

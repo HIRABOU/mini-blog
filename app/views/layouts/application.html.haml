@@ -7,4 +7,22 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    .header
+      .header__bar
+        %h1.header__bar__name
+          = link_to root_path do
+            mini-blog
+        .header__bar__sign
+          - if user_signed_in?
+            .header__bar__sign__out.btn.btn-primary
+              = link_to 'ログアウト', destroy_user_session_path, class: 'btn-color', method: :delete
+            .header__bar__sign__page.btn.btn-primary
+              = link_to 'マイページ', "/users/current_user.id", class: 'btn-color'
+            .header__bar__sign__new.btn.btn-primary
+              = link_to '新規投稿', new_tweet_path, class: 'btn-color'
+          - else
+            .header__bar__sign__in.btn.btn-primary
+              = link_to 'サインイン', new_user_session_path, class: 'btn-color'
+            .header__bar__sign__new.btn.btn-primary
+              = link_to '新規登録', new_user_registration_path, class: 'btn-color'
     = yield
