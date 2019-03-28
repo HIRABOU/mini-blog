@@ -9,9 +9,11 @@
       = @tweet.content
 
   .bottom-content
-    .bottom-content__edit.btn.btn-primary
-      = link_to '更新', edit_tweet_path(@tweet), class: 'btn-color'
-    .bottom-content__delete.btn.btn-primary
-      = link_to '削除', tweet_path, method: :delete, class: 'btn-color'
     .bottom-content__back.btn.btn-primary
       = link_to '戻る', tweets_path, class: 'btn-color'
+    - if current_user.id == @tweet.user_id
+      .bottom-content__edit.btn.btn-primary
+        = link_to '更新', edit_tweet_path(@tweet), class: 'btn-color'
+      .bottom-content__delete.btn.btn-primary
+        = link_to '削除', tweet_path, method: :delete, class: 'btn-color'
+

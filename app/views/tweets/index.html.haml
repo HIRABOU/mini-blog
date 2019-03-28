@@ -5,6 +5,5 @@
       .contents__main
         %ul
           %li.more_list
-            = link_to "/tweets/#{tweet.id}" do
-              = tweet.title
+            = link_to "#{tweet.title}：投稿者#{tweet.user.name}", "/tweets/#{tweet.id}", class: "list-box"
 
