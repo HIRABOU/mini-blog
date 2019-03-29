@@ -13,7 +13,7 @@
       = current_user.name
       %b の投稿記事一覧
     .groups__content
-    - current_user.tweets.each do |tweet|
+    - current_user.tweets.reverse_each do |tweet|
       .groups__content__title
         =link_to "/tweets/#{tweet.id}" do
           .groups__content__title__main

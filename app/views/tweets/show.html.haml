@@ -23,7 +23,7 @@
       = @tweet.user.name
       %b の他の記事
       .another-info__tweets
-      - @user.tweets.each do |tweet|
+      - @user.tweets.reverse_each do |tweet|
         .another-info__tweets__link
         =link_to "/tweets/#{tweet.id}" do
           .another-info__tweets__link__title
