@@ -45,6 +45,12 @@
 
   &__content {
       font-size: 15px;
+      overflow: scroll;
+      a, a:hover, a:visited{
+        text-decoration: none;
+        color: black;
+      }
+
 
     &__title {
         font-size: 18px;

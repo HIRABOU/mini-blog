@@ -1,10 +1,10 @@
 .main-content-body
   .contents.text-center
-    新着記事一覧
+    %b 新着記事一覧
     - @tweets.each do |tweet|
       .contents__main
         %ul
           %li.more_list
-            = link_to "#{tweet.title}：投稿者#{tweet.user.name}", "/tweets/#{tweet.id}", class: "list-box"
+            = link_to "#{tweet.title}：投稿者#{tweet.user.name}(#{tweet.created_at.strftime('%m/%d')})", "/tweets/#{tweet.id}", class: "list-box"
     = paginate @tweets
 

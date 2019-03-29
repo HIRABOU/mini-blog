@@ -25,6 +25,6 @@
       .another-info__tweets
       - @user.tweets.reverse_each do |tweet|
         .another-info__tweets__link
-        =link_to "/tweets/#{tweet.id}" do
-          .another-info__tweets__link__title
-            = tweet.title
+          =link_to "/tweets/#{tweet.id}", class:"tweet-link" do
+            .another-info__tweets__link__title
+              = tweet.title
